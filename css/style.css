@@ -339,6 +339,6 @@ content: "\f00d"
     }
 
     header{
-    position:absolute;
+    position:static;
     }
 }
