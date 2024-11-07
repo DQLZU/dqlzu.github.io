@@ -1,0 +1,274 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+    /*border: solid 2px red;*/
+  }
+  
+  /*
+      2. Remove default margin
+    */
+  * {
+    margin: 0;
+  }
+  
+  /*
+      Typographic tweaks!
+      3. Add accessible line-height
+      4. Improve text rendering
+    */
+  body {
+
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /*
+      5. Improve media defaults
+    */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /*
+      6. Remove built-in form typography styles
+    */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /*
+      7. Avoid text overflows
+    */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+/*--------------------------------------------*/
+/*------------GENERAL--------------------*/
+
+   .container {
+      max-width: 1042px;
+      margin: 0 auto;
+    }
+
+   body{
+    font-family: "Titillium Web", sans-serif;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+   }  
+
+   .content {
+    padding-bottom: 70px;
+  } 
+  
+  .content h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+   .ligne {
+    width: 87px;
+    margin: 20px auto;
+   }  
+
+  .content p{
+    font-size:18px;
+    font-weight: 400;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  nav ul {
+    list-style-type: none;
+  }
+
+  nav ul a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /*--------------------------------------------*/
+
+   /*--------------header----------------------*/
+
+  .logo svg{
+    height: 36px;
+  }
+
+  .main-header {
+    background-color: #87509c;
+    padding: 45px 0;
+  }
+
+.main-header h1{
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  .flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } 
+  
+ #main-nav ul a{
+    padding: 10px 16px;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  #main-nav ul a:hover, ul a:active{
+
+    transition: all 0.7s ease;
+    border-radius: 4px;
+    background-color: rgba(100, 55, 125, 0.6);
+  }
+
+  .flex {
+    display: flex;
+  }
+
+.h-100{
+  height: 50vh;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+/*--------------------------------------------*/
+
+/*-------------Deuxiéme section--------------------*/
+
+#second-content .ligne{
+  border:#14a58c 4px solid;
+}
+
+.imagen{
+  min-height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-second {
+  display: flex;
+  gap: 100px;
+}   
+
+.imagen img{
+  max-width: 100%;   
+  align-items: center;
+  padding-bottom: 53px;
+}
+
+#second-content{
+    background-color: #17c2a4;
+    color: #fff;
+    display: flex;
+    padding: 115px 0 125px 0;
+    flex-direction: column;
+    text-align: center;
+}
+
+  #second-content p{
+    font-weight: 300;
+    font-size: 16px;
+
+  }
+
+/*--------------------------------------------*/
+
+/*------------Troisiéme section-----------------*/
+
+  #third-content{
+    background-color: #d74680;
+    color: white;
+    display: flex;
+    text-align: center;
+    padding: 115px 0 125px 0;
+  }
+
+#third-content .ligne{
+  border:#b73c6d 4px solid;
+}
+
+.imagen-base{
+  display: flex;
+  align-items: flex-start;
+  
+}
+
+.imagen-base img{
+  border-radius: 50%;
+}
+
+.row-third {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    text-align:justify;
+}    
+
+.row-third >* {
+    flex: 1 0 40%;
+} 
+
+.flex-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+}
+
+  .row-third p {
+    width: 320px;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 21px;
+  }  
+
+  .row-third h3 {
+    text-transform: uppercase;
+    font-size:24px;
+    padding: 30px 0 0 0;
+   }
+
+.row-third h4 {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  color:#ffdd99;
+ }
+ 
+
+/*-------------footer------------------------*/
+
+  .footer{
+    background: #344b8e;
+    padding: 2.5rem 0;
+  }
+
+  .footer ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #nav-footer ul a{
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  #nav-footer ul a:hover{
+    color: #30bae7;
+  }
