@@ -59,6 +59,9 @@ body {
 header {
     background-color: #333;
     padding: 1.5rem 0;
+    position: fixed;
+    width: 100vw;
+
 }
 
 .container {
@@ -231,6 +234,56 @@ footer p{
     text-align: center;
 }
 
+.mobile{
+    display: block;
+}
+
+.desktop{
+    display: none;
+}
+
+ul.mobile{
+list-style-type: none;
+padding-left: 0;
+position: fixed;
+top: 125px;
+height: 100vh;
+width: 100vw;
+background-color: #666;
+left: -100%;   
+transition: all 0.3s ease-in-out;
+}
+
+ul.mobile a{
+    color: #cccccc;
+}
+
+header input{
+    display: none;
+}
+
+#main-header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header label {
+font-size: 1.5rem;
+color: #fff;
+}
+
+#click:checked ~ ul.mobile{
+    left: 0;
+}
+
+#click:checked ~ label i:before{
+content: "\f00d"
+}
+
+#click:not(:checked) ~ ul.mobile{
+    left: -100%;
+}
 
 /*Responsive*/
 @media screen and (min-width: 1000px) { /*Aqui estas dentro de un navegador de pc*/
@@ -275,5 +328,17 @@ footer p{
     ul.flex{
         display: flex;
         justify-content: left;
+    }
+
+    .mobile{
+        display: none;
+    }
+    
+    .desktop{
+        display: block;
+    }
+
+    header{
+    position:absolute;
     }
 }
