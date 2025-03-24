@@ -1,0 +1,108 @@
+[
+    
+    {
+        "id": 1,
+        "nom": "The Legend of Zelda: A Link to the Past",
+        "prix": "12",
+        "description": "The Legend of Zelda: A Link to the Past est un jeu d'aventure où Link doit sauver la princesse Zelda en explorant deux mondes parallèles. Il est considéré comme un classique du jeu vidéo grâce à son gameplay et son histoire captivante.",
+        "img": "img/Zelda-1.jpg"
+    },
+    {
+        "id": 2,
+        "nom": "Final Fantasy VII",
+        "prix": "12",
+        "description": "Final Fantasy VII est un jeu de rôle japonais sorti en 1997, où le joueur incarne Cloud Strife, un mercenaire qui lutte contre la corporation Shinra et une menace plus grande, Sephiroth. Il est célèbre pour son histoire émotive, ses personnages mémorables et ses graphismes révolutionnaires pour l'époque.",
+        "img": "img/FinalFVII.jpg"
+    },    
+    {
+        "id": 3,
+        "nom": "The Legend of Zelda: Ocarina of Time",
+        "prix": "12",
+        "description": "The Legend of Zelda: Ocarina of Time est un jeu d'aventure sorti en 1998 où Link doit sauver le royaume d'Hyrule en voyageant dans le temps. Il est reconnu comme l'un des meilleurs jeux vidéo de tous les temps grâce à son gameplay innovant et son monde ouvert captivant.",
+        "img": "img/Zelda-2.jpg"
+    },
+    {
+        "id": 4,
+        "nom": "Resident Evil",
+        "prix": "12",
+        "description": "Resident Evil est un jeu d'horreur et de survie sorti en 1996, où les joueurs incarnent des membres d'une équipe d'élite devant enquêter sur des événements mystérieux dans un manoir infesté de créatures mutantes. Il est célèbre pour sa tension, son ambiance effrayante et avoir lancé la franchise emblématique de jeux d'horreur.",
+        "img": "img/residentEvil.jpg"
+    },
+    {
+        "id": 5,
+        "nom": "Kingdom Hearts",
+        "prix": "15",
+        "description": "Kingdom Hearts est un jeu d'action-RPG où les joueurs incarnent Sora, un jeune garçon qui part à l'aventure avec des personnages de Disney et Final Fantasy pour arrêter une force maléfique. Le jeu est célèbre pour son mélange d'univers Disney et de gameplay RPG.",
+        "img": "img/KingdomHearts.jpg"
+    },
+    {
+        "id": 6,
+        "nom": "Final Fantasy X",
+        "prix": "18",
+        "description": "Final Fantasy X est un jeu de rôle où les joueurs suivent l'histoire de Tidus et Yuna dans un monde fantastique nommé Spira. Il est reconnu pour ses graphismes impressionnants, sa bande-son inoubliable et son système de combat au tour par tour.",
+        "img": "img/FinalFX.jpg"
+    },    
+    {
+        "id": 7,
+        "nom": "Super Mario World",
+        "prix": "10",
+        "description": "Super Mario World est un jeu de plateforme où Mario doit sauver la princesse Peach et l'île Yoshi en affrontant Bowser. Il est un des jeux les plus populaires de la Super Nintendo grâce à ses niveaux créatifs et son gameplay fluide.",
+        "img": "img/SuperMario2.jpg"
+    },
+    {
+        "id": 8,
+        "nom": "Metal Gear Solid",
+        "prix": "14",
+        "description": "Metal Gear Solid est un jeu d'infiltration et d'action où les joueurs incarnent Solid Snake, un soldat d'élite chargé de neutraliser des menaces nucléaires. Le jeu est célèbre pour ses mécaniques de furtivité, ses scènes cinématiques et son scénario complexe.",
+        "img": "img/metalGearSolid.jpg"
+    },
+    {
+        "id": 9,
+        "nom": "Final Fantasy Tactics",
+        "prix": "15",
+        "description": "Final Fantasy Tactics est un jeu de stratégie au tour par tour où les joueurs contrôlent un groupe de personnages dans des batailles tactiques. Le jeu se distingue par son système de classe complexe, son intrigue politique et ses graphismes en 2D.",
+        "img": "img/finalFantasyTactics.jpg"
+    },    
+    {
+        "id": 10,
+        "nom": "Donkey Kong Country",
+        "prix": "10",
+          "description": "Donkey Kong Country est un jeu de plateforme où les joueurs contrôlent Donkey Kong et Diddy Kong à travers des niveaux remplis de pièges et d'ennemis. Il est connu pour ses graphismes innovants de l'époque et son gameplay exigeant.",
+          "img": "img/donkeyKongCountry.jpg"
+    },  
+    {
+        "id": 11,
+        "nom": "Super Mario Bros.",
+        "prix": "8",
+        "description": "Super Mario Bros. est un jeu de plateforme iconique qui a marqué l'histoire du jeu vidéo. Dans ce jeu, Mario et Luigi doivent sauver la princesse Peach du méchant Bowser dans un monde rempli de niveaux et d'obstacles. Il est célèbre pour ses mécaniques de gameplay simples et sa jouabilité addictive.",
+        "img": "img/superMarioBros.jpg"
+    },
+    {
+        "id": 12,
+        "nom": "The Elder Scrolls V: Skyrim",
+        "prix": "15",
+        "description": "The Elder Scrolls V: Skyrim est un jeu de rôle en monde ouvert où les joueurs incarnent le Dragonborn, un héros capable de maîtriser la puissance des dragons. Il est célèbre pour son immense monde ouvert, ses quêtes variées et ses options de personnalisation du personnage.",
+        "img": "img/Skyrim.jpg"
+    },
+    {
+        "id": 13,
+        "nom": "Dark Souls",
+        "prix": "18",
+        "description": "Dark Souls est un jeu d'action-RPG réputé pour sa difficulté, son monde interconnecté et son système de combat complexe. Les joueurs doivent affronter des ennemis puissants et découvrir des secrets dans un univers sombre et impitoyable.",
+        "img": "img/darkSouls.jpg"
+    },
+    {
+        "id": 14,
+        "nom": "Minecraft",
+        "prix": "20",
+        "description": "Minecraft est un jeu de construction et de survie dans un monde ouvert généré de manière procédurale. Les joueurs peuvent explorer, récolter des ressources et construire des structures tout en affrontant des ennemis et en complétant des objectifs.",
+        "img": "img/minecraft.jpg"
+    },
+    {
+        "id": 15,
+        "nom": "The Witcher 3: Wild Hunt",
+        "prix": "30",
+        "description": "The Witcher 3: Wild Hunt est un jeu de rôle où les joueurs incarnent Geralt de Riv, un chasseur de monstres dans un monde médiéval fantastique. Le jeu est célèbre pour son monde ouvert riche, son histoire captivante et ses personnages bien développés.",
+        "img": "img/theWitcher.jpg"
+    }
+]
