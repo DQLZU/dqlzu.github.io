@@ -89,39 +89,38 @@ function loadData(){
             out+=
             `     
             <div class="col-lg-4 col-md-6 col-sm-12 product">
-            <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg">
-                <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
-            </div>
-            <div class="image-container">
-                <div class="d-flex justify-content-between align-items-start">
-                <h5 class= "card-title pt-1 display-6 lh-1 fw-bold">${product.nom}</h5>
-
-                <div class="d-flex justify-content-between align-items-end">   
-                    <button
-                            data-id="${product.id}"
-                            data-nom="${product.nom}"
-                            data-img="${product.img}"
-                            data-description="${product.description}"
-                            data-prix="${product.prix}"
-                            class = "btn text-primary voir-details"  
-                            data-bs-toggle="modal" 
-                            data-bs-target="#productModal">
-                            <i class="fa-solid fa-eye"></i>
-                    </button>
-
-                    <button
-                            data-id="${product.id}"
-                            data-nom="${product.nom}"
-                            data-img="${product.img}"
-                            data-description="${product.description}"
-                            data-prix="${product.prix}"
-                            class = "btn text-primary add-to-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
-                    </button>
+                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                    <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
                 </div>
-            </div>
-            </div>
-        
+                <div class="image-container">
+                    <div class="d-flex justify-content-between align-items-start">
+                    <h5 class= "card-title pt-1 display-6 lh-1 fw-bold">${product.nom}</h5>
+
+                    <div class="d-flex justify-content-between align-items-end">   
+                        <button
+                                data-id="${product.id}"
+                                data-nom="${product.nom}"
+                                data-img="${product.img}"
+                                data-description="${product.description}"
+                                data-prix="${product.prix}"
+                                class = "btn text-primary voir-details"  
+                                data-bs-toggle="modal" 
+                                data-bs-target="#productModal">
+                                <i class="fa-solid fa-eye"></i>
+                        </button>
+
+                        <button
+                                data-id="${product.id}"
+                                data-nom="${product.nom}"
+                                data-img="${product.img}"
+                                data-description="${product.description}"
+                                data-prix="${product.prix}"
+                                class = "btn text-primary add-to-cart">
+                                <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                </div>
             </div>
         `;
     }
@@ -141,6 +140,7 @@ function loadData(){
     fadeIn(div);
 }
 
+loadInitialItems();
 
 function fadeIn(div){
     let opacity = 0;
@@ -155,7 +155,7 @@ function fadeIn(div){
     },50);
 }
 
-loadInitialItems();
+
 
 
 //Boton details
