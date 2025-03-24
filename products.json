@@ -26,7 +26,7 @@
         "nom": "Resident Evil",
         "prix": "12",
         "description": "Resident Evil est un jeu d'horreur et de survie sorti en 1996, où les joueurs incarnent des membres d'une équipe d'élite devant enquêter sur des événements mystérieux dans un manoir infesté de créatures mutantes. Il est célèbre pour sa tension, son ambiance effrayante et avoir lancé la franchise emblématique de jeux d'horreur.",
-        "img": "img/residentEvil.jpg"
+        "img": "img/ResidentEvil.jpg"
     },
     {
         "id": 5,
