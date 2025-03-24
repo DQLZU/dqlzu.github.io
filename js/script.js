@@ -29,7 +29,7 @@ function loadInitialItems(){
         if(counter < initialItems){
             out+=
             `     
-            <div class="col-md-4 col-sm-1 product">
+            <div class="col-lg-4 col-md-6 col-sm-12 product">
             <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg">
                 <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
             </div>
@@ -88,7 +88,7 @@ function loadData(){
 
             out+=
             `     
-            <div class="col-md-4 col-sm-1 product">
+            <div class="col-lg-4 col-md-6 col-sm-12 product">
             <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg">
                 <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
             </div>
