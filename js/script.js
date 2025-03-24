@@ -15,6 +15,7 @@ fetch("../products.json")
 });
 
 
+
 let cont = document.querySelector(".container-100");
 let loadMoreButton = document.querySelector(".container-100 .button");
 
@@ -157,7 +158,6 @@ function fadeIn(div){
 
 
 
-
 //Boton details
 document.querySelectorAll(".voir-details").forEach(button =>{
     button.addEventListener("click", (event) =>{
@@ -200,7 +200,6 @@ document.querySelectorAll(".add-to-cart").forEach(button =>{
         
             const buttonClicked = event.target.closest('button');
             const id = buttonClicked.getAttribute("data-id");
-            const img = buttonClicked.getAttribute("data-img");
             const nom = buttonClicked.getAttribute("data-nom");
             const prix = buttonClicked.getAttribute("data-prix");
            
@@ -210,7 +209,7 @@ document.querySelectorAll(".add-to-cart").forEach(button =>{
 });
  
         
-function addtToCart(id, img, nom, prix)
+function addtToCart(id, nom, prix)
 {
     const existingItem = cart.find(item => item.id === id);
     
@@ -220,7 +219,7 @@ function addtToCart(id, img, nom, prix)
     }
     else
     {
-         cart.push({id, img, nom, prix, quantity: 1});
+         cart.push({id, nom, prix, quantity: 1});
     }   
 
     updateCart();
