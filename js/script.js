@@ -75,7 +75,18 @@ function loadInitialItems(){
     cont.insertBefore(div, loadMoreButton); 
 }
 
-
+function fadeIn(div){
+    let opacity = 0;
+    let interval = setInterval(function(){
+        if(opacity <= 1){
+            opacity = opacity + 0.02;
+            div.style.opacity = opacity;
+        }
+        else{
+            clearInterval(interval);
+        }
+    },50);
+}
 
 function loadData(){
     let products = JSON.parse(localStorage.getItem("products"));
@@ -129,7 +140,8 @@ function loadData(){
     }
 
     let div = document.createElement("div");
-    div.classList.add("row fade-element");
+    div.classList.add("row");
+    div.classList.add("fade-element");
     div.innerHTML = out;   
     cont.insertBefore(div, loadMoreButton); 
 
@@ -142,18 +154,7 @@ function loadData(){
 }
 
 
-function fadeIn(div){
-    let opacity = 0;
-    let interval = setInterval(function(){
-        if(opacity <= 1){
-            opacity = opacity + 0.02;
-            div.style.opacity = opacity;
-        }
-        else{
-            clearInterval(interval);
-        }
-    },50);
-}
+
 
 loadInitialItems();
 
