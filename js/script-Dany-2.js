@@ -11,15 +11,14 @@ fetch("../products.json")
 .then(response => response.json())
 .then(products => {
     localStorage.setItem("products", JSON.stringify(products));
-
 });
 
 
 let cont = document.querySelector(".container-100");
-let loadMoreButton = document.querySelector(".container-100 .button");
+let loadMoreButton = document.querySelector(".container-100 button");
 
-let initialItems = 6;
-let loadItems = 3;
+let initialItems = 4;
+let loadItems = 4;
 
 function loadInitialItems(){
     let products = JSON.parse(localStorage.getItem("products"));
@@ -29,8 +28,8 @@ function loadInitialItems(){
         if(counter < initialItems){
             out+=
             `     
-            <div class="col-md-4 col-sm-1 product">
-            <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg">
+            <div class="col product">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
                 <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
             </div>
             <div class="image-container">
@@ -47,7 +46,7 @@ function loadInitialItems(){
                             class = "btn text-primary voir-details"  
                             data-bs-toggle="modal" 
                             data-bs-target="#productModal">
-                            <i class="fa-solid fa-eye"></i>
+                            <i class="fa-solid fa-circle-info"></i>
                     </button>
 
                     <button
@@ -68,14 +67,15 @@ function loadInitialItems(){
         }
         counter++;
     }
-    let div = document.createElement("div");
-    div.classList.add("row");
-    div.innerHTML = out;
-    
-    cont.insertBefore(div, loadMoreButton); 
+
+        let div = document.createElement("div");
+        cont.classList.add("div");
+        div.innerHTML = out;
+        cont.insertBefore(div, loadMoreButton); 
+        
 }
 
-
+loadInitialItems();
 
 function loadData(){
     let products = JSON.parse(localStorage.getItem("products"));
@@ -87,55 +87,57 @@ function loadData(){
         if(counter >= currentDisplayedItems && counter < loadItems + currentDisplayedItems){
 
             out+=
-            `     
-            <div class="col-md-4 col-sm-1 product">
-            <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg">
-                <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
-            </div>
-            <div class="image-container">
-                <div class="d-flex justify-content-between align-items-start">
-                <h5 class= "card-title pt-1 display-6 lh-1 fw-bold">${product.nom}</h5>
-
-                <div class="d-flex justify-content-between align-items-end">   
-                    <button
-                            data-id="${product.id}"
-                            data-nom="${product.nom}"
-                            data-img="${product.img}"
-                            data-description="${product.description}"
-                            data-prix="${product.prix}"
-                            class = "btn text-primary voir-details"  
-                            data-bs-toggle="modal" 
-                            data-bs-target="#productModal">
-                            <i class="fa-solid fa-eye"></i>
-                    </button>
-
-                    <button
-                            data-id="${product.id}"
-                            data-nom="${product.nom}"
-                            data-img="${product.img}"
-                            data-description="${product.description}"
-                            data-prix="${product.prix}"
-                            class = "btn text-primary add-to-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
-                    </button>
+                `
+                
+                <div class="col product">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                    <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
                 </div>
-            </div>
-            </div>
-        
-            </div>
-        `;
+                <div class="image-container">
+                    <div class="d-flex justify-content-between align-items-start">
+                    <h5 class= "card-title pt-1 display-6 lh-1 fw-bold">${product.nom}</h5>
+
+                    <div class="d-flex justify-content-between align-items-end">   
+                        <button
+                                data-id="${product.id}"
+                                data-nom="${product.nom}"
+                                data-img="${product.img}"
+                                data-description="${product.description}"
+                                data-prix="${product.prix}"
+                                class = "btn text-primary voir-details"  
+                                data-bs-toggle="modal" 
+                                data-bs-target="#productModal">
+                                <i class="fa-solid fa-circle-info"></i>
+                        </button>
+
+                        <button
+                                data-id="${product.id}"
+                                data-nom="${product.nom}"
+                                data-img="${product.img}"
+                                data-description="${product.description}"
+                                data-prix="${product.prix}"
+                                class = "btn text-primary add-to-cart">
+                               <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                </div>
+            
+                </div>
+            `;
     }
     counter++;
     }
 
     let div = document.createElement("div");
-    div.classList.add("row");
-    div.innerHTML = out;   
+    cont.classList.add("col-md-6");
     cont.insertBefore(div, loadMoreButton); 
+    div.innerHTML = out;
+    div.style.opacity = 0;
 
     if(document.querySelectorAll(".product").length == products.length)
     {
-       loadMoreButton.classList.add("hide");
+        loadMoreButton.style.display = "none";
     }
 
     fadeIn(div);
@@ -146,30 +148,28 @@ function fadeIn(div){
     let opacity = 0;
     let interval = setInterval(function(){
         if(opacity <= 1){
-            opacity = opacity + 0.02;
+            opacity = opacity + 0.1;
             div.style.opacity = opacity;
         }
         else{
             clearInterval(interval);
         }
-    },50);
+    },30);
 }
-
-loadInitialItems();
-
 
 //Boton details
 document.querySelectorAll(".voir-details").forEach(button =>{
-    button.addEventListener("click", (event) =>{
-            const buttonClicked = event.target.closest('button');
-            const id = buttonClicked.getAttribute("data-id");
-            const img = buttonClicked.getAttribute("data-img");
-            const nom = buttonClicked.getAttribute("data-nom");
-            const prix = buttonClicked.getAttribute("data-prix");
-            const description = buttonClicked.getAttribute("data-description");
 
-            showProductModal(id, img, nom, prix, description);
-        
+    button.addEventListener("click", (event) =>{
+        const buttonClicked = event.target.closest('button');
+        const id = buttonClicked.getAttribute("data-id");
+        const img = buttonClicked.getAttribute("data-img");
+        const nom = buttonClicked.getAttribute("data-nom");
+        const prix = buttonClicked.getAttribute("data-prix");
+        const description = buttonClicked.getAttribute("data-description");
+
+        showProductModal(id, img, nom, prix, description);
+    
     });
 
 
@@ -194,18 +194,17 @@ document.querySelectorAll(".voir-details").forEach(button =>{
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 //Boton AddCart
-document.querySelectorAll(".container-100").forEach(button =>{
+document.querySelectorAll(".add-to-cart").forEach(button =>{
 
     button.addEventListener("click", (event) =>{
-        if (event.target.closest(".add-to-cart")) {
-            const buttonClicked = event.target.closest('button');
-            const id = buttonClicked.getAttribute("data-id");
-            const img = buttonClicked.getAttribute("data-img");
-            const nom = buttonClicked.getAttribute("data-nom");
-            const prix = buttonClicked.getAttribute("data-prix");
-           
-            addtToCart(id, img, nom, prix);
-        }
+        const buttonClicked = event.target.closest('button');
+        const id = buttonClicked.getAttribute("data-id");
+        const img = buttonClicked.getAttribute("data-img");
+        const nom = buttonClicked.getAttribute("data-nom");
+        const prix = buttonClicked.getAttribute("data-prix");
+
+        addtToCart(id, img, nom, prix);
+
    });
 
 });
@@ -213,7 +212,7 @@ document.querySelectorAll(".container-100").forEach(button =>{
         
 function addtToCart(id, img, nom, prix)
 {
-    const existingItem = cart.find(item => item.id === id);
+    const existingItem = cart.find(item => item.id === id); //existingItem es un objeto
     
     if(existingItem)
     {
@@ -227,6 +226,8 @@ function addtToCart(id, img, nom, prix)
     updateCart();
     saveCart();
 }
+
+
 
 
 function updateCart()
@@ -243,7 +244,7 @@ function updateCart()
         
         listItem.innerHTML = `
             <div class="d-flex justify-content-between align-items-center">
-                <span> ${item.quantity} x ${item.nom} = ${(item.prix * item.quantity).toFixed(2)}</span>
+                <span>${item.nom} x ${item.quantity} = ${(item.prix * item.quantity).toFixed(2)}</span>
                 <button class="btn remove-item ms-2 btn-panier" data-id="${item.id}"> 
                     <i class="fas fa-trash-alt"></i> 
                 </button>
@@ -269,9 +270,7 @@ function updateCart()
     displayClearCartButton();
 
 }
- 
-
-
+        
         
 function removeFromCart(id)
 {
@@ -316,7 +315,7 @@ function displayClearCartButton()
     }
     else
     {
-        clearCartButton.style.display = "none";
+                clearCartButton.style.display = "none";
     }
 }
 
@@ -332,7 +331,7 @@ clearCartButton.addEventListener("click", () => {
     {
 
     }
-});  
+})  
 
 
 
@@ -362,6 +361,7 @@ arrow.addEventListener("click", () => {
 
 
 
+
 //CONTACT
 
 const form = document.getElementById("contactForm");
@@ -371,7 +371,7 @@ const form = document.getElementById("contactForm");
         event.preventDefault();
 
 
-       if(validateForm()){
+        if(validateForm()){
 
             alert('Message envoyé avec succès !');
 
@@ -435,7 +435,7 @@ function validateForm(){
         const message = document.getElementById("message-text");
 
         if(message.value.length < 10){
-            showError(message, "Le message doit contenir au moins 10 caractères.");
+            showError(password, "Le message doit contenir au moins 10 caractères.");
             isValid = false;
         }
         else
