@@ -186,7 +186,8 @@ document.querySelectorAll(".voir-details").forEach(button =>{
             <img src="${img}" class="img-fluid mb-3" alt="${nom}">
         </div>
         <p class="text-center"> ${description}</p>
-        <p class="text-center"> ${prix} $</p>`;
+        <p class="text-center"> ${prix} $</p>
+        `;
 
     }
 
@@ -212,6 +213,23 @@ document.querySelectorAll(".container-100").forEach(button =>{
 
 });
  
+
+document.querySelectorAll("#addCartModal").forEach(button =>{
+
+    button.addEventListener("click", (event) =>{
+        if (event.target.closest(".add-to-cart")) {
+            const buttonClicked = event.target.closest('button');
+            const id = buttonClicked.getAttribute("data-id");
+            const img = buttonClicked.getAttribute("data-img");
+            const nom = buttonClicked.getAttribute("data-nom");
+            const prix = buttonClicked.getAttribute("data-prix");
+           
+            addtToCart(id, img, nom, prix);
+        }
+   });
+
+});
+
         
 function addtToCart(id, img, nom, prix)
 {
