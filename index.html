@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
 
@@ -35,8 +35,8 @@
                   <li class="nav-item"><a class="nav-link" href="#about">À propos de nous</a></li>
                   <li class="nav-item"><a class="nav-link" href="#jeux">Jeux</a></li>
                   <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
-                  <li class="nav-item"><button class="btn btn-secodary text-uppercase nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contactez-nous </button></li>
-                  <li class="nav-item"><button class="btn btn-secodary nav-link" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fa-solid fa-cart-shopping"></i> (<span id="cartCount">0</span>)</button></li>
+                  <li class="nav-item"><button class="btn text-uppercase nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contactez-nous </button></li>
+                  <li class="nav-item"><button class="btn nav-link" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fa-solid fa-cart-shopping"></i> (<span id="cartCount">0</span>)</button></li>
                 </ul>
               </div>
             </div>
@@ -199,28 +199,31 @@
           </div>
 
           <div class="row">
-            <div class="contact-info text-center col-lg-4 col-md-6 col-sm-12 mb-3">  
-                  <h5 class="mb-2">Contact :</h5> 
+            <div class="contact-info text-center col-lg-6 col-md-6 col-sm-12 mb-3 fs-5">  
+                  <h3 class="mb-2">Contact</h3> 
                   <p>123 Rue Labelle, Gatineau, QC</p>
                   <p>+819 496 453</p>
                   <p>levelup@gmail.com</p>
               </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12  mb-3">
-              <h5 class="mb-2">Suivez-nous</h5>
+            <div class="col-lg-6 col-md-6 col-sm-12  mb-3">
+              <h3 class="mb-2">Suivez-nous</h3>
                 <a href="https://www.facebook.com" class="icon text-primary px-2"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://twitter.com" class="icon text-primary px-2"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.instagram.com" class="icon text-primary px-2"><i class="fab fa-instagram"></i></a>
             </div>
-      
 
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-              <h5 class="mb-2">Mentions légales</h5>
-              <a href="#">Mentions légales</a>
-            </div>
           </div>
         </div>
     
+
+        <div class="col-lg-12 mb-3 d-flex align-items-center justify-content-center">    
+          <a href="#" class=" text-decoration-none" data-bs-toggle="modal" data-bs-target="#mentionsModal">
+            <h3 class="mb-2">Mentions légales</h3>
+          </a>
+        </div>
+
+
         <p class="text-center text-body-secondary">&copy; 2025 Company, Inc. Tous droits réservés.</p>
        </div>
     </footer>
@@ -250,7 +253,7 @@
 
 
     <div class="modal fade text-body" id="productModal" aria-hidden="true" aria-labelledby="productModalLabel" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
 
@@ -285,19 +288,19 @@
 
         <div class="modal-body">
           <form class="form-horizontal" id="contactForm">
-            <div class="mb-1">
+            <div class="pb-2">
               <label for="recipient-name" class="col-form-label">Nom complet :</label>
-              <input type="text" class="form-control" id="name" required="">
+              <input type="text" class="form-control" id="name" required>
               <div class="invalid-feedback"></div>
             </div>
-            <div class="mb-1">
+            <div class="pb-2">
               <label for="email" class="form-label">Adresse e-mail :</label>
-              <input type="email" class="form-control" id="email" placeholder="name@example.com" required="">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
               <div class="invalid-feedback"></div>
             </div>
-            <div class="mb-1">
+            <div class="pb-2">
               <label for="message-text" class="col-form-label">Message :</label>
-              <textarea class="form-control" rows="6" id="message-text" placeholder="Veuillez écrire votre message" required=""></textarea>
+              <textarea class="form-control" rows="6" id="message-text" placeholder="Veuillez écrire votre message" required></textarea>
               <div class="invalid-feedback"></div>
             </div>
           </form>
@@ -305,9 +308,44 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
-          <button type="button" class="btn btn-primary">Envoyer le message</button>
+          <button type="submit" class="btn btn-primary" id="submit">Envoyer le message</button>
         </div>
       
+    </div>
+  </div>
+</div>
+
+
+<!--MODAL MENTIONS LÉGALES-->
+
+<div class="modal fade modal-lg" id="mentionsModal" tabindex="-1" aria-labelledby="mentionsModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="mentionsModalLabel">Mentions Légales</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalMentions">
+        <h4>Propriétaire de la boutique :</h4>
+        <p class="pb-2">La boutique de jeux vidéo LevelUp (ci-après, "la Boutique"), située au 123 Rue Labelle, Gatineau, QC, est la propriété de LevelUp (raison sociale ou nom du propriétaire), inscrite sous le numéro d'identification fiscale 056223434657312.</p>
+        
+        <h4>Objet social :</h4>
+        <p class="pb-2">La Boutique se spécialise dans la vente de jeux vidéo, consoles, accessoires et produits connexes, tant en magasin qu'en ligne via son site web [URL du site web de la boutique].</p>
+        
+        <h4>Propriété intellectuelle :</h4>
+        <p class="pb-2">Tous les contenus et éléments du site web de la Boutique, y compris les textes, images, logos, marques, graphiques, dessins et autres matériels, sont protégés par les lois sur la propriété intellectuelle et industrielle. Il est interdit de les reproduire, distribuer ou exploiter sans le consentement exprès de la Boutique ou des titulaires des droits correspondants.</p>
+        
+        <h4>Conditions d'achat :</h4>
+        <p class="pb-2">En effectuant un achat à la Boutique, le client accepte les conditions de vente, y compris les prix, la disponibilité des produits, les modes de paiement ainsi que les politiques d'expédition, de retour et de remboursement détaillées sur notre site web.</p>
+        
+        <h4>Protection des données personnelles :</h4>
+        <p class="pb-2">Conformément à la législation en vigueur sur la protection des données personnelles, LevelUp garantit la confidentialité et la sécurité des informations personnelles fournies par ses clients.</p>
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+      </div>
     </div>
   </div>
 </div>

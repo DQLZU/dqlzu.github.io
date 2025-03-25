@@ -30,12 +30,12 @@ function loadInitialItems(){
             out+=
             `     
             <div class="col-md-4 col-sm-1 product">
-            <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg">
+            <div class="card card-cover overflow-hidden text-bg-dark rounded-4">
                 <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
             </div>
             <div class="image-container">
                 <div class="d-flex justify-content-between align-items-start">
-                <h5 class= "card-title pt-1 display-6 lh-1 fw-bold">${product.nom}</h5>
+                <h6 class= "card-title pt-1 display-6 lh-1 fw-bold fs-2">${product.nom}</h6>
 
                 <div class="d-flex justify-content-between align-items-end">   
                     <button
@@ -47,7 +47,7 @@ function loadInitialItems(){
                             class = "btn text-primary voir-details"  
                             data-bs-toggle="modal" 
                             data-bs-target="#productModal">
-                            <i class="fa-solid fa-eye"></i>
+                            <i class="fa-solid fa-eye fs-4"></i>
                     </button>
 
                     <button
@@ -57,7 +57,7 @@ function loadInitialItems(){
                             data-description="${product.description}"
                             data-prix="${product.prix}"
                             class = "btn text-primary add-to-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
+                            <i class="fa-solid fa-cart-plus fs-4"></i>
                     </button>
                 </div>
             </div>
@@ -89,12 +89,12 @@ function loadData(){
             out+=
             `     
             <div class="col-md-4 col-sm-1 product">
-            <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg">
+            <div class="card card-cover overflow-hidden text-bg-dark rounded-4">
                 <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
             </div>
             <div class="image-container">
                 <div class="d-flex justify-content-between align-items-start">
-                <h5 class= "card-title pt-1 display-6 lh-1 fw-bold">${product.nom}</h5>
+                <h6 class= "card-title pt-1 display-6 lh-1 fw-bold fs-2">${product.nom}</h6>
 
                 <div class="d-flex justify-content-between align-items-end">   
                     <button
@@ -106,7 +106,7 @@ function loadData(){
                             class = "btn text-primary voir-details"  
                             data-bs-toggle="modal" 
                             data-bs-target="#productModal">
-                            <i class="fa-solid fa-eye"></i>
+                            <i class="fa-solid fa-eye fs-4"></i>
                     </button>
 
                     <button
@@ -116,7 +116,7 @@ function loadData(){
                             data-description="${product.description}"
                             data-prix="${product.prix}"
                             class = "btn text-primary add-to-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
+                            <i class="fa-solid fa-cart-plus fs-4"></i>
                     </button>
                 </div>
             </div>
@@ -182,9 +182,11 @@ document.querySelectorAll(".voir-details").forEach(button =>{
         const modalBody = document.getElementById("modal-body");
 
         modalBody.innerHTML = 
-        `<img src="${img}" class="img-fluid mb-3"alt="${nom}">
-        <p class= "text-center"> ${description}
-        <p class= "text-center"> ${prix} $</p>`;
+        `<div class="text-center">
+            <img src="${img}" class="img-fluid mb-3" alt="${nom}">
+        </div>
+        <p class="text-center"> ${description}</p>
+        <p class="text-center"> ${prix} $</p>`;
 
     }
 
@@ -364,18 +366,22 @@ arrow.addEventListener("click", () => {
 
 //CONTACT
 
-const form = document.getElementById("contactForm");
+const submitButton = document.getElementById("submit");
 
-    form.addEventListener ('submit', function(event){
+submitButton.addEventListener ('click', function(event){
 
         event.preventDefault();
 
 
        if(validateForm()){
 
-            alert('Message envoyé avec succès !');
-
-            form.resert();
+           alert('Message envoyé avec succès !');
+            const modalElem = document.getElementById("contactModal");
+            const modal = bootstrap.Modal.getInstance(modalElem);  
+            modal.hide();
+        
+            const form = document.getElementById("contactForm"); 
+            form.resert();  
         }
         
     });
@@ -440,7 +446,7 @@ function validateForm(){
         }
         else
         {
-            showSuccess(password);
+            showSuccess(message);
         }
     
 
