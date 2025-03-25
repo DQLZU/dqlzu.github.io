@@ -189,7 +189,18 @@ document.querySelectorAll(".voir-details").forEach(button =>{
         <p class="text-center"> ${description}</p>
         <p class="text-center"> ${prix} $</p>
         `;
+        
 
+        const btn_ajouter = document.getElementById("addCartModal");
+
+            btn_ajouter.setAttribute("data-id", id);
+            btn_ajouter.setAttribute("data-img", img);
+            btn_ajouter.setAttribute("data-nom", nom);
+            btn_ajouter.setAttribute("data-prix", prix);
+            btn_ajouter.setAttribute("data-description", description);
+
+
+        
     }
 
 });
