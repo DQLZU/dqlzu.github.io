@@ -110,15 +110,11 @@
   background-color: $primary;
 }
 
-#modalMentions{
-  font-size: 30px;
+#mentionsModal{
   font-family: $font-secondary;
+  background-color: $secondary;
 }
 
-.container-100 i{
-  font-size: 40px;
-  color: rgb(0, 0, 0);
-}
 
 .fade-element {
   transition: opacity 0.3s ease-in-out; 
