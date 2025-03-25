@@ -129,7 +129,7 @@ function loadData(){
     }
 
     let div = document.createElement("div");
-    div.classList.add("row");
+    div.classList.add("row fade-element");
     div.innerHTML = out;   
     cont.insertBefore(div, loadMoreButton); 
 
