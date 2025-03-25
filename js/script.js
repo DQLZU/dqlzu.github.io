@@ -198,9 +198,6 @@ document.querySelectorAll(".voir-details").forEach(button =>{
             btn_ajouter.setAttribute("data-nom", nom);
             btn_ajouter.setAttribute("data-prix", prix);
             btn_ajouter.setAttribute("data-description", description);
-
-
-        
     }
 
 });
