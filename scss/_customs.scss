@@ -5,6 +5,8 @@
 
 
 .logo {
+    width: 35%;
+    height: 90%;
     animation-name: logo;
     animation-duration: 0.3s;
     animation-iteration-count: 2;
@@ -20,7 +22,16 @@
         }
   }
 
+.logo-footer
+{
+  width: 15%;
+}
 
+#image img
+{
+  width: 100%;
+  height: 100%;
+}  
 
 
 .product {
@@ -29,7 +40,6 @@
 
 #image{
   max-height: 800px;
-  min-height: 100px;
 }
 
 .about-section {
@@ -81,17 +91,15 @@
   bottom: 50px;
   width: 80px;
   height: 80px;
-  border: none;
   background-color: rgba(255, 255, 255, 0.4);
   opacity: 0;
   transition: all 0.5s ease-in-out;
   border-radius: 50%;
-}
-
-#button-fleche{
-  font-size: 40px;
+  border: none;
+  font-size: 50px;
   color: rgb(0, 0, 0);
 }
+
 
 #button-fleche:hover{
   background-color: rgba($primary, 0.8);
@@ -102,19 +110,24 @@
   opacity: 1;
 }
 
-.hide{
+.hide
+{
   display: none !important;
 }
 
-#reviews{
+#reviews
+{
   background-color: $primary;
 }
 
 #mentionsModal{
   font-family: $font-secondary;
-  background-color: $secondary;
 }
 
+.container-100 i{
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+}
 
 .fade-element {
   transition: opacity 0.3s ease-in-out; 

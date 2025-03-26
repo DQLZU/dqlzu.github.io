@@ -29,7 +29,7 @@ function loadInitialItems(){
         if(counter < initialItems){
             out+=
             `     
-            <div class="col-md-4 col-sm-1 product">
+            <div class="col-lg-4 col-md-12 col-sm-12 product">
             <div class="card card-cover overflow-hidden text-bg-dark rounded-4">
                 <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
             </div>
@@ -88,7 +88,7 @@ function loadData(){
 
             out+=
             `     
-            <div class="col-md-4 col-sm-1 product">
+            <div class="col-lg-4 col-md-12 col-sm-12 product">
             <div class="card card-cover overflow-hidden text-bg-dark rounded-4">
                 <img src = "${product.img}" class = "card-img-top" alt= "${product.nom}">
             </div>
@@ -153,16 +153,17 @@ function fadeIn(div){
         else{
             clearInterval(interval);
         }
-    },50);
+    },70);
 }
 
 loadInitialItems();
 
 
 //Boton details
-document.querySelectorAll(".voir-details").forEach(button =>{
-    button.addEventListener("click", (event) =>{
-            const buttonClicked = event.target.closest('button');
+    document.addEventListener("click", (event) =>{
+
+            let buttonClicked = event.target.closest('.voir-details');
+            if(buttonClicked){
             const id = buttonClicked.getAttribute("data-id");
             const img = buttonClicked.getAttribute("data-img");
             const nom = buttonClicked.getAttribute("data-nom");
@@ -170,7 +171,7 @@ document.querySelectorAll(".voir-details").forEach(button =>{
             const description = buttonClicked.getAttribute("data-description");
 
             showProductModal(id, img, nom, prix, description);
-        
+        }
     });
 
 
@@ -187,58 +188,36 @@ document.querySelectorAll(".voir-details").forEach(button =>{
             <img src="${img}" class="img-fluid mb-3" alt="${nom}">
         </div>
         <p class="text-center"> ${description}</p>
-        <p class="text-center"> ${prix} $</p>
-        `;
-        
+        <p class="text-center"> ${prix} $</p>`;
 
-        const btn_ajouter = document.getElementById("addCartModal");
+        const btn_ajouter = document.getElementById("addCart");
 
-            btn_ajouter.setAttribute("data-id", id);
-            btn_ajouter.setAttribute("data-img", img);
-            btn_ajouter.setAttribute("data-nom", nom);
-            btn_ajouter.setAttribute("data-prix", prix);
-            btn_ajouter.setAttribute("data-description", description);
+        btn_ajouter.setAttribute("data-id", id);
+        btn_ajouter.setAttribute("data-img", img);
+        btn_ajouter.setAttribute("data-nom", nom);
+        btn_ajouter.setAttribute("data-prix", prix);
+        btn_ajouter.setAttribute("data-description", description);
     }
 
-});
+
 
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 //Boton AddCart
-document.querySelectorAll(".container-100").forEach(button =>{
+document.addEventListener("click", (event) => {
+    let button = event.target.closest(".add-to-cart");  
+    
+    if (button) {
+        const id = button.getAttribute("data-id");
+        const img = button.getAttribute("data-img");
+        const nom = button.getAttribute("data-nom");
+        const prix = button.getAttribute("data-prix");
 
-    button.addEventListener("click", (event) =>{
-        if (event.target.closest(".add-to-cart")) {
-            const buttonClicked = event.target.closest('button');
-            const id = buttonClicked.getAttribute("data-id");
-            const img = buttonClicked.getAttribute("data-img");
-            const nom = buttonClicked.getAttribute("data-nom");
-            const prix = buttonClicked.getAttribute("data-prix");
-           
-            addtToCart(id, img, nom, prix);
-        }
-   });
-
+        addtToCart(id, img, nom, prix);
+    }
 });
  
-
-document.querySelectorAll("#addCartModal").forEach(button =>{
-
-    button.addEventListener("click", (event) =>{
-        if (event.target.closest(".add-to-cart")) {
-            const buttonClicked = event.target.closest('button');
-            const id = buttonClicked.getAttribute("data-id");
-            const img = buttonClicked.getAttribute("data-img");
-            const nom = buttonClicked.getAttribute("data-nom");
-            const prix = buttonClicked.getAttribute("data-prix");
-           
-            addtToCart(id, img, nom, prix);
-        }
-   });
-
-});
-
         
 function addtToCart(id, img, nom, prix)
 {
@@ -388,9 +367,6 @@ arrow.addEventListener("click", () => {
 
 
 
-
-
-
 //CONTACT
 
 const submitButton = document.getElementById("submit");
@@ -408,7 +384,7 @@ submitButton.addEventListener ('click', function(event){
             modal.hide();
         
             const form = document.getElementById("contactForm"); 
-            form.resert();  
+            form.reset();  
         }
         
     });
